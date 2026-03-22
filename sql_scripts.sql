@@ -167,7 +167,7 @@ FROM layoffs_staging
 GROUP BY company, YEAR(date), MONTH(date)
 ORDER BY company ASC;
 
---Ranking on which year each company laid off the most
+--Ranking by which year each company laid off the most
 WITH company_year_totals AS (
     SELECT
         company,
@@ -185,5 +185,3 @@ SELECT
     ) AS layoff_rank
 FROM company_year_totals
 ORDER BY company DESC;
-
-select * from layoffs_staging
